@@ -8,29 +8,30 @@
 pipeline {
         agent any
         stages {
-            stage('Build'){
-                steps{
+            stage('Build') {
+                steps {
                       echo "Build"
                 }
             }
-                        stage('Test'){
-                            steps{
+                        stage('Test') {
+                            steps {
                             	echo "Test"
                             }
                         }
-                                    stage('Integration Test'){
-                                        steps{
+                                    stage('Integration Test') {
+                                        steps {
                                             echo "Integration Test"
                                         }
                                     }
-      } post{
-            always{
+      }
+      post {
+            always {
                 echo 'Im awsome. I run always'
             }
-            succes{
+            success {
                 echo 'I run when you are succesful'
             }
-            failure{
+            failure {
                  echo 'I run when you fail'
             }
       }
