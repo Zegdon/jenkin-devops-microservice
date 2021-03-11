@@ -63,7 +63,7 @@ pipeline {
 
 
 
-                        stage ('Build docker image'){
+                        stage ('Build docker image') {
                             steps {
                             //"docker build -t csabaazari/currency-exchange-devops:$env.BUILD_TAG"
                             script {
@@ -71,10 +71,10 @@ pipeline {
                                 }
                             }
                         }
-                        stage ('Push docker image'){
+                        stage ('Push docker image') {
                             steps {
-                            script{
-                                docker.withRegistry('', 'dockerhub');{
+                            script {
+                                docker.withRegistry('', 'dockerhub')  {
                                 dockerImage.push();
                                 dockerImage.push('latest');
                                }
