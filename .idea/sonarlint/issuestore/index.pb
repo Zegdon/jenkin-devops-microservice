@@ -6,3 +6,7 @@
 :
 
 Dockerfile,6\6\6651ddff6eb82c840ced7c1dddee15c6e1913dd4
+ 
+psrc/test/java/com/in28minutes/microservices/currencyexchangeservice/resource/CurrencyExchangeControllerTest.java,8\2\8270895a98ada234dc4411134856698aa2445371
+‘
+asrc/test/java/com/in28minutes/microservices/currencyexchangeservice/cucumber/HelloWorldSteps.java,1\5\159ad1e590382aac8ffdaf7a865ec774dad67074
