@@ -22,7 +22,7 @@ pipeline {
             stage('Checkout') {
                 steps {
                        sh 'mvn --version'
-                      // sh 'docker version'
+                       sh 'docker version'
 
                       echo "Build"
                       echo "PATH - $PATH"
@@ -67,7 +67,7 @@ pipeline {
                             steps {
                             //"docker build -t csabaazari/currency-exchange-devops:$env.BUILD_TAG"
                             script {
-                               dockerImage = docker.build("csabaazari/currency-exchange-devops1:${env.BUILD_TAG}")
+                               dockerImage = docker.build("csabaazari/currency-exchange-devops11:${env.BUILD_TAG}")
                                 }
                             }
                         }
