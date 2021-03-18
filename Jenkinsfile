@@ -69,7 +69,7 @@ pipeline {
                             script {
                                dockerImage = docker.build("csabaazari/currency-exchange-devops11:${env.BUILD_TAG}")
 
-                               dockerRun = docker.run ("csabaazari/currency-exchange-devops11:${env.BUILD_TAG}")
+                              // dockerRun = docker.run ("csabaazari/currency-exchange-devops11:${env.BUILD_TAG}")
                                 }
                             }
                         }
