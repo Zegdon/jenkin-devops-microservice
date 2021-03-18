@@ -76,7 +76,7 @@ pipeline {
                         }
                         stage ('Run docker image') {
                             steps {
-                            sh "docker run -p 8000:8000 $registry:$env.BUILD_NUMBER"
+                            sh "docker run -p 8000:8000 csabaazari/currency-exchange-devops11:${env.BUILD_TAG}"
                             }
                         }
       }
