@@ -10,6 +10,7 @@ pipeline {
       // agent { docker { image 'maven:latest' }  }
       // agent { docker { image 'node:13.8' }  }
       environment{
+      registry = "csabaazari/currency-exchange-devops11"
       dockerHome = tool 'myDocker'
       mavenHome = tool 'myMaven'
       PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
@@ -69,20 +70,15 @@ pipeline {
                             script {
                                dockerImage = docker.build("csabaazari/currency-exchange-devops11:${env.BUILD_TAG}")
 
-                              // dockerRun = docker.run ("csabaazari/currency-exchange-devops11:${env.BUILD_TAG}")
+                             //  dockerImage = docker.run ("csabaazari/currency-exchange-devops11:${env.BUILD_TAG}")
                                 }
                             }
                         }
-//                         stage ('Push docker image') {
-//                             steps {
-//                             script {
-//                                 docker.withRegistry('', 'dockerhub')  {
-//                                 dockerImage.push();
-//                                 dockerImage.push('latest');
-//                                }
-//                             }
-//                           }
-//                         }
+                        stage ('Run docker image') {
+                            steps {
+                            sh "docker run -p 8000:8000 $registry:$env.BUILD_NUMBER"
+                            }
+                        }
       }
       post {
             always {
